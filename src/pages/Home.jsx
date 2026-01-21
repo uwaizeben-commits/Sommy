@@ -1,20 +1,37 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { productsAPI } from '../api/api';
 import '../styles/Home.css';
 
 const Home = () => {
   const [featuredProducts, setFeaturedProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const slides = [
+    { id: 1, image: '/1.jpeg', title: 'Welcome to SOMMY\'S PLACE' },
+    { id: 2, image: '/2.jpg', title: 'Discover Amazing Products' },
+    { id: 3, image: '/3.jpg', title: 'Best Prices Guaranteed' }
+  ];
 
   useEffect(() => {
     fetchFeaturedProducts();
   }, []);
 
+  useEffect(() => {
+    const slideInterval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 5000); // Change slide every 5 seconds
+
+    return () => clearInterval(slideInterval);
+  }, []);
+
   const fetchFeaturedProducts = async () => {
     try {
-      const response = await productsAPI.getAll({ limit: 6 });
-      setFeaturedProducts(response.data.products);
+      const response = await fetch('https://raw.githubusercontent.com/madiha2323/Api/main/data.json');
+      const data = await response.json();
+      // Get first 6 products from the API data
+      const products = data.slice(0, 6);
+      setFeaturedProducts(products);
     } catch (error) {
       console.error('Error fetching products:', error);
     } finally {
@@ -22,16 +39,62 @@ const Home = () => {
     }
   };
 
+  const goToSlide = (index) => {
+    setCurrentSlide(index);
+  };
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  };
+
   return (
     <div className="home">
-      {/* Hero Section */}
-      <section className="hero">
-        <div className="hero-content">
-          <h1>Welcome to SOMMY'S PLACE</h1>
-          <p>Discover the Best Products at Amazing Prices</p>
-          <Link to="/products" className="cta-button">
-            Shop Now
-          </Link>
+      {/* Carousel/Slider Section */}
+      <section className="carousel-section">
+        <div className="carousel-container">
+          <div className="carousel-wrapper">
+            {slides.map((slide, index) => (
+              <div
+                key={slide.id}
+                className={`carousel-slide ${index === currentSlide ? 'active' : ''}`}
+                style={{
+                  backgroundImage: `url(${slide.image})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center'
+                }}
+              >
+                <div className="carousel-overlay">
+                  <h1>{slide.title}</h1>
+                  <Link to="/products" className="cta-button">
+                    Shop Now
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Navigation Arrows */}
+          <button className="carousel-prev" onClick={prevSlide}>
+            &#10094;
+          </button>
+          <button className="carousel-next" onClick={nextSlide}>
+            &#10095;
+          </button>
+
+          {/* Dot Indicators */}
+          <div className="carousel-dots">
+            {slides.map((_, index) => (
+              <button
+                key={index}
+                className={`dot ${index === currentSlide ? 'active' : ''}`}
+                onClick={() => goToSlide(index)}
+              />
+            ))}
+          </div>
         </div>
       </section>
 
@@ -42,10 +105,13 @@ const Home = () => {
           <p>Loading...</p>
         ) : (
           <div className="products-grid">
-            {featuredProducts.map((product) => (
-              <Link key={product._id} to={`/product/${product._id}`} className="product-item">
-                <img src={product.image} alt={product.name} />
-                <h3>{product.name}</h3>
+            {featuredProducts.map((product, index) => (
+              <Link key={index} to={`/product/${index}`} className="product-item">
+                <img 
+                  src={product.image || product.img || 'https://via.placeholder.com/250x200'} 
+                  alt={product.name || product.title || 'Product'} 
+                />
+                <h3>{product.name || product.title}</h3>
                 <p>${product.price}</p>
               </Link>
             ))}
