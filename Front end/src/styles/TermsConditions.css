@@ -1,0 +1,107 @@
+.terms-conditions-container {
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  padding: 40px 20px;
+  transition: background-color 0.3s ease;
+}
+
+.terms-conditions-content {
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: var(--bg-secondary);
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.terms-conditions-content h1 {
+  font-size: 2.5rem;
+  color: var(--text-color);
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.last-updated {
+  color: var(--text-color);
+  opacity: 0.7;
+  font-size: 0.9rem;
+  margin-bottom: 30px;
+}
+
+.terms-conditions-content section {
+  margin-bottom: 30px;
+}
+
+.terms-conditions-content h2 {
+  font-size: 1.5rem;
+  color: var(--text-color);
+  margin-top: 30px;
+  margin-bottom: 15px;
+  font-weight: 600;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 10px;
+}
+
+.terms-conditions-content h3 {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  margin-top: 15px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.terms-conditions-content p {
+  line-height: 1.8;
+  color: var(--text-color);
+  margin-bottom: 12px;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.terms-conditions-content ul {
+  margin: 15px 0;
+  padding-left: 30px;
+}
+
+.terms-conditions-content ul li {
+  line-height: 1.8;
+  color: var(--text-color);
+  margin-bottom: 8px;
+  list-style-type: disc;
+  opacity: 0.9;
+}
+
+.terms-conditions-content strong {
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .terms-conditions-container {
+    padding: 20px 10px;
+  }
+
+  .terms-conditions-content {
+    padding: 25px;
+  }
+
+  .terms-conditions-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .terms-conditions-content h2 {
+    font-size: 1.2rem;
+  }
+
+  .terms-conditions-content h3 {
+    font-size: 1rem;
+  }
+
+  .terms-conditions-content p,
+  .terms-conditions-content ul li {
+    font-size: 0.95rem;
+  }
+}

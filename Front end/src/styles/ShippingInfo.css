@@ -1,0 +1,289 @@
+.shipping-info-container {
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  padding: 60px 20px;
+  transition: background-color 0.3s ease;
+}
+
+.shipping-info-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  color: var(--text-color);
+}
+
+.shipping-info-content h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 15px;
+  color: var(--text-color);
+}
+
+.intro-text {
+  text-align: center;
+  font-size: 1.05rem;
+  margin-bottom: 50px;
+  opacity: 0.8;
+}
+
+.shipping-info-content h2 {
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  color: var(--text-color);
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 15px;
+}
+
+.shipping-info-content h3 {
+  font-size: 1.3rem;
+  color: var(--text-color);
+  margin-bottom: 15px;
+}
+
+section {
+  margin-bottom: 50px;
+}
+
+.methods-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.method-card {
+  background: var(--bg-secondary);
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.method-card:hover {
+  transform: translateY(-5px);
+}
+
+.method-icon {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.method-card h3 {
+  margin-top: 0;
+}
+
+.method-details p {
+  margin: 5px 0;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.method-details strong {
+  color: var(--text-color);
+}
+
+.method-details ul {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0 0 0;
+}
+
+.method-details li {
+  padding: 8px 0;
+  padding-left: 25px;
+  position: relative;
+  font-size: 0.9rem;
+}
+
+.method-details li:before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #4ecdc4;
+  font-weight: bold;
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.step {
+  background: var(--bg-secondary);
+  padding: 25px;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+}
+
+.step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: #4ecdc4;
+  color: white;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.step h3 {
+  font-size: 1.1rem;
+  margin: 10px 0;
+  color: var(--text-color);
+}
+
+.step p {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin: 0;
+}
+
+.coverage-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.coverage-item {
+  background: var(--bg-secondary);
+  padding: 25px;
+  border-radius: 8px;
+  border-left: 4px solid #4ecdc4;
+}
+
+.coverage-item h3 {
+  margin-top: 0;
+}
+
+.coverage-item p {
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.costs-table {
+  background: var(--bg-secondary);
+  padding: 25px;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--text-color);
+}
+
+table th {
+  background: var(--border-color);
+  padding: 15px;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 2px solid var(--border-color);
+}
+
+table td {
+  padding: 15px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+table tr:hover {
+  background: var(--bg-color);
+}
+
+.free {
+  color: #4ecdc4;
+  font-weight: 600;
+}
+
+.shipping-faqs {
+  background: var(--bg-secondary);
+  padding: 30px;
+  border-radius: 8px;
+}
+
+.faqs {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.faq-item {
+  background: var(--bg-color);
+  padding: 20px;
+  border-radius: 4px;
+  border-left: 4px solid #4ecdc4;
+}
+
+.faq-item h4 {
+  margin-top: 0;
+  color: var(--text-color);
+  font-size: 1.05rem;
+}
+
+.faq-item p {
+  margin: 10px 0 0 0;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.contact-shipping-support {
+  background: var(--bg-secondary);
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.contact-shipping-support h2 {
+  margin-bottom: 10px;
+}
+
+.contact-shipping-support > p {
+  font-size: 1.05rem;
+  margin-bottom: 25px;
+  opacity: 0.9;
+}
+
+.support-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact {
+  background: var(--bg-color);
+  padding: 15px;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .shipping-info-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .shipping-info-content h2 {
+    font-size: 1.4rem;
+  }
+
+  .methods-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .coverage-info {
+    grid-template-columns: 1fr;
+  }
+
+  .support-contacts {
+    flex-direction: column;
+  }
+}

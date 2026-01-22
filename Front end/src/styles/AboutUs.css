@@ -1,0 +1,193 @@
+.about-us {
+  width: 100%;
+  background: var(--bg-color);
+  transition: background-color 0.3s ease;
+}
+
+/* Hero Section */
+.about-hero {
+  width: 100%;
+  height: 400px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 2rem;
+}
+
+.about-hero-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.about-hero-content p {
+  font-size: 1.3rem;
+  opacity: 0.9;
+}
+
+/* About Section */
+.about-section {
+  padding: 4rem 2rem;
+  background: var(--bg-secondary);
+  transition: background-color 0.3s ease;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-item {
+  margin-bottom: 3rem;
+}
+
+.about-item h2 {
+  font-size: 2rem;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.about-item p {
+  font-size: 1.05rem;
+  color: var(--text-color);
+  line-height: 1.8;
+  opacity: 0.9;
+}
+
+.values-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.values-list li {
+  font-size: 1.05rem;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+  padding-left: 2rem;
+  position: relative;
+  line-height: 1.6;
+}
+
+.values-list li:before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #667eea;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+/* Story Section */
+.story-section {
+  padding: 4rem 2rem;
+  background: var(--bg-color);
+  transition: background-color 0.3s ease;
+}
+
+.story-section h2 {
+  font-size: 2.5rem;
+  color: var(--text-color);
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+.story-section p {
+  font-size: 1.05rem;
+  color: var(--text-color);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  opacity: 0.9;
+}
+
+/* Team Section */
+.team-section {
+  padding: 4rem 2rem;
+  background: var(--bg-secondary);
+  transition: background-color 0.3s ease;
+}
+
+.team-section h2 {
+  font-size: 2.5rem;
+  color: var(--text-color);
+  margin-bottom: 3rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.feature-card {
+  background: var(--bg-color);
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-color: #667eea;
+}
+
+.feature-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+  font-size: 1.5rem;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.feature-card p {
+  font-size: 0.95rem;
+  color: var(--text-color);
+  opacity: 0.8;
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .about-hero-content p {
+    font-size: 1rem;
+  }
+
+  .about-item h2 {
+    font-size: 1.5rem;
+  }
+
+  .story-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .team-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+}
