@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: sommy-backend
+    runtime: node
+    region: ohio
+    plan: free
+    root: Backend/server
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: MONGODB_URI
+        scope: build,runtime
+      - key: JWT_SECRET
+        scope: build,runtime
+      - key: NODE_ENV
+        value: production
+        scope: build,runtime
+      - key: PORT
+        value: 10000
+        scope: build,runtime
